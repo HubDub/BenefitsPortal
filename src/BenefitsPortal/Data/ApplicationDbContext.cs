@@ -15,6 +15,12 @@ namespace BenefitsPortal.Data
         {
         }
 
+        public DbSet<ApplicationUser> User { get; set; }
+        public DbSet<SiteDiscount> SiteDiscount { get; set; }
+        public DbSet<Retirement> Retirement { get; set; }
+        public DbSet<LifeInsurance> LifeInsurance { get; set; }
+        public DbSet<HealthInsurance> HealthInsurance { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
