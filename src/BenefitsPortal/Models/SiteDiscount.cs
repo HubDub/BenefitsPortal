@@ -17,6 +17,8 @@ namespace BenefitsPortal.Models
         [Required]
         public string Instructions { get; set; }
         [Required]
+        public string Summary { get; set; }
+        [Required]
         public string Link { get; set; }
     }
 }

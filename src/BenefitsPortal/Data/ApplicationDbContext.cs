@@ -15,6 +15,7 @@ namespace BenefitsPortal.Data
         {
         }
 
+        public DbSet<Employee> Employee { get; set; }
         public DbSet<ApplicationUser> User { get; set; }
         public DbSet<SiteDiscount> SiteDiscount { get; set; }
         public DbSet<Retirement> Retirement { get; set; }
