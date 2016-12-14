@@ -1,0 +1,28 @@
+@model BenefitsPortal.Models.BenefitsViewModels.AllEmployeesViewModel
+
+<h1>Dashboard of Employee Benefits</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">Last Name, First Name</div>
+        <div class="col-md-2">Employee ID</div>
+        <div class="col-md-2">Hire Date</div>
+        <div class="col-md-2">PTO Accrual Rate</div>
+        <div class="col-md-2">PTO Available Total</div>
+
+    </div>
+    @foreach (var employee in Model.Employees)
+    {
+        <div class="row">
+            <div class="col-md-2">
+                <a asp-action="Edit" asp-route-id="employee.EmployeeId">@Html.DisplayFor(modelItem => employee.LastName)</a>
+                @Html.DisplayFor(modelItem => employee.FirstName)
+            </div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => employee.EmployeeId)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => employee.HireDate)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoRate)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoTotal)</div>
+        </div>
+
+    }
+</div>
