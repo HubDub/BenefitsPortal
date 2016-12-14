@@ -9,6 +9,10 @@ namespace BenefitsPortal.Models.AccountViewModels
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Employee ID")]
+        public string EmployeeId { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

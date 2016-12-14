@@ -10,11 +10,18 @@
     <hr />
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
+        <label asp-for="EmployeeId" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="EmployeeId" class="form-control" />
+            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+        </div>
+    <div class="form-group">
         <label asp-for="Email" class="col-md-2 control-label"></label>
         <div class="col-md-10">
             <input asp-for="Email" class="form-control" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
+    </div>
     </div>
     <div class="form-group">
         <label asp-for="Password" class="col-md-2 control-label"></label>
