@@ -1,0 +1,15 @@
+@model BenefitsPortal.Models.BenefitsViewModels.MyBenefitsViewModel
+
+<h1>Your Benefits</h1>
+<div class="container">
+    @foreach (var siteDiscount in Model.SiteDiscounts)
+    {
+        <div class="row">
+            <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.SiteName)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.DiscountType)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Summary)</div>
+            <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Instructions)</div>
+            <a href="@siteDiscount.Link"><div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Link)</div></a>
+        </div>
+    }
+</div>
