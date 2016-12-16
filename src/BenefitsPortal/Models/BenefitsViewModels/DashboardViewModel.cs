@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace BenefitsPortal.Models.BenefitsViewModels
 {
-    public class AllEmployeesViewModel
+    public class DashboardViewModel
     {
         public IEnumerable<Employee> Employees { get; set; }
-        public AllEmployeesViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { } 
+        public DashboardViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { } 
+        //public IEnumerable<DashboardBenefit> DashboardBenefits { get; set; }
     }
 }
