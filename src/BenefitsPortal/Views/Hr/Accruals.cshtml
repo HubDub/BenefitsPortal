@@ -1,0 +1,37 @@
+@model BenefitsPortal.Models.BenefitsViewModels.AccrualViewModel
+
+<h1>Accrual Form</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">Employee Name</div>
+        <div class="col-md-2">PTO Accrual Rate</div>
+        <div class="col-md-2">PTO Available Total</div>
+        <div class="col-md-2">PTO Used This Period</div>
+    </div>
+
+    <form asp-controller="Hr" asp-action="Accruals" method="put">
+
+        @foreach (var employee in Model.Employees)
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.DisplayFor(modelItem => employee.FirstName) @Html.DisplayFor(modelItem => employee.LastName)
+                </div>
+
+                <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoRate)</div>
+
+                <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoTotal)</div>
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <input />
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-md-offset-6 col-md-2">
+            <input  type="submit" value="Accrue PTO" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
