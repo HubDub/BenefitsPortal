@@ -2,6 +2,35 @@
 
 <h1>Your Benefits</h1>
 <div class="container">
+
+    <div>NAME: @Html.DisplayFor(model => model.Employee.FirstName) @Html.DisplayFor(model => model.Employee.LastName)</div>
+    <p>ADDRESS: @Html.DisplayFor(model => model.Employee.StreetAddress) @Html.DisplayFor(model => model.Employee.City) @Html.DisplayFor(model => model.Employee.State), @Html.DisplayFor(model => model.Employee.Zip)</p>
+    <h2>EMPLOYEE SPECIFIC BENEFITS</h2>
+    <p>PTO Available: @Html.DisplayFor(model => model.Employee.PtoTotal)</p>
+    <p>PTO Accrual Rate: @Html.DisplayFor(model => model.Employee.PtoRate) per pay period</p>
+    <br />
+    <h4>Health Insurance:</h4>
+    <p>@Html.DisplayFor(model => model.HealthInsurance.HealthInsPlanName)</p> 
+    <p>@Html.DisplayFor(model => model.HealthInsurance.HealthInsPlanSummary)</p>
+    <p>Premium: $@Html.DisplayFor(model => model.HealthInsurance.HealthInsPremium)</p>
+    <p>Deductible: $@Html.DisplayFor(model => model.HealthInsurance.HealthInsDeductible)</p>
+    <a href="@Html.DisplayFor(model => model.HealthInsurance.HealthInsPlanLink)">@Html.DisplayFor(model => model.HealthInsurance.HealthInsPlanLink)</a>
+    <h4>Life Insurance:</h4>
+    <p>@Html.DisplayFor(model => model.LifeInsurance.LifeInsPlanName)</p>
+    <p>@Html.DisplayFor(model => model.LifeInsurance.LifeInsPlanSummary)</p>
+    <a href="@Html.DisplayFor(model => model.LifeInsurance.LifeInsPlanLink)">@Html.DisplayFor(model => model.LifeInsurance.LifeInsPlanLink)</a>
+    <h4>Retirement Plan:</h4>
+    <p>@Html.DisplayFor(model => model.Retirement.RetirementPlanName)</p>
+    <p>@Html.DisplayFor(model => model.Retirement.RetirementPlanSummary)</p>
+    <a href="@Html.DisplayFor(model => model.Retirement.RetirementPlanLink)">@Html.DisplayFor(model => model.Retirement.RetirementPlanLink)</a>
+    
+    <h2>SITE-WIDE BENEFITS</h2>
+    <div class="row">
+        <h4 class="col-md-2">Site Name</h4>
+        <h4 class="col-md-2">Discount Type</h4>
+        <h4 class="col-md-2">Summary</h4>
+        <h4 class="col-md-2">Instructions</h4>
+    </div>
     @foreach (var siteDiscount in Model.SiteDiscounts)
     {
         <div class="row">
@@ -9,7 +38,7 @@
             <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.DiscountType)</div>
             <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Summary)</div>
             <div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Instructions)</div>
-            <a href="@siteDiscount.Link"><div class="col-md-2">@Html.DisplayFor(modelItem => siteDiscount.Link)</div></a>
+            <a href="@siteDiscount.Link"><div class="col-md-4">@Html.DisplayFor(modelItem => siteDiscount.Link)</div></a>
         </div>
     }
 </div>
