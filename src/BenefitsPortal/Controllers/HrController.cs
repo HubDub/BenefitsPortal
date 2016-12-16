@@ -60,5 +60,13 @@ namespace BenefitsPortal.Controllers
             model.Retirement = newContext.Retirement.Where(r => r.RetirementPlanId == model.Employee.RetirementPlanId).SingleOrDefault();
             return View(model);
         }
+
+        //this method will list all of the employees and present the PTO accrual view
+        public async Task<IActionResult> Accruals()
+        {
+            AccrualViewModel model = new AccrualViewModel(_userManager, newContext);
+            model.Employees = await newContext.Employee.ToListAsync();
+            return View(model);
+        }
     }
 }
