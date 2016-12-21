@@ -13,7 +13,9 @@ namespace BenefitsPortal.Models
         [Required]
         public string LastName { get; set; }
         [Required]
+        [DataType(DataType.Date)]
         public DateTime HireDate { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? TerminationDate { get; set; }
         [Required]
         public double BiWeeklySalary { get; set; }
@@ -25,11 +27,12 @@ namespace BenefitsPortal.Models
         [Required]
         public string State { get; set; }
         [Required]
-        public string Zip { get; set; }
+        public string Zip { get; set; } 
         [Required]
         public string EmployeeId { get; set; }
         [Required]
         public string Department { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? LastAccrualDate { get; set; }
         [Required]
         public double PtoRate { get; set; }

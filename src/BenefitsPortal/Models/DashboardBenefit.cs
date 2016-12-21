@@ -12,9 +12,9 @@ namespace BenefitsPortal.Models
         public string EmployeeId { get; set; }
         public string Department { get; set; }
         public DateTime HireDate { get; set; }
-        public string HealthPlan { get; set; }
         public double PtoRate { get; set; }
-        public int RetirementPlanPercentage { get; set; }
         public double PtoTotal { get; set; }
+        public string HealthPlan { get; set; }
+        public int RetirementPlanPercentage { get; set; }
     }
 }
