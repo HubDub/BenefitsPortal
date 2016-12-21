@@ -36,15 +36,13 @@ namespace BenefitsPortal.Controllers
         public async Task<IActionResult> Dashboard()
         {
             DashboardViewModel model = new DashboardViewModel(_userManager, newContext);
-            model.Employees = await newContext.Employee.ToListAsync();
-            //still working on making this work
-            //var EmployeeBenefits =
-            //    (from e in newContext.Employee
-            //    join h in newContext.HealthInsurance on e.HealthInsurancePlanId equals h.HealthInsPlanId
-            //    select new { FirstName = e.FirstName, LastName = e.LastName, EmployeeId = e.EmployeeId, Department = e.Department, HireDate = e.HireDate, HealthPlan = h.HealthInsPlanName, PTORate = e.PtoRate, RetirementPlanPercentage = e.RetirementPlanPercentage, PTOTotal = e.PtoTotal }).ToListAsync();
 
-        //model.HealthInsurance = await newContext.HealthInsurance.ToListAsync();
-        //model.DashboardBenefits = EmployeeBenefits;
+            var EmployeeBenefits = await
+                (from e in newContext.Employee
+                 join h in newContext.HealthInsurance on e.HealthInsurancePlanId equals h.HealthInsPlanId
+                 select new DashboardBenefit { FirstName = e.FirstName, LastName = e.LastName, EmployeeId = e.EmployeeId, Department = e.Department, HireDate = e.HireDate, HealthPlan = h.HealthInsPlanName, PtoRate = e.PtoRate, RetirementPlanPercentage = e.RetirementPlanPercentage, PtoTotal = e.PtoTotal }).ToListAsync();
+
+            model.DashboardBenefits = EmployeeBenefits;
             return View(model);
         }
 
@@ -67,6 +65,27 @@ namespace BenefitsPortal.Controllers
             AccrualViewModel model = new AccrualViewModel(_userManager, newContext);
             model.Employees = await newContext.Employee.ToListAsync();
             return View(model);
+        }
+
+        //this method returns the form to add a new employee to the database
+        public IActionResult AddEmployee()
+        {
+            AddEmployeeViewModel model = new AddEmployeeViewModel(_userManager, newContext);
+            return View(model);
+        }
+
+        //this overloaded method grabs the form data from AddEmployee, checks it against the model and then sends it to the DB
+        [HttpPost]
+        public async Task<IActionResult> AddEmployee(Employee Employee)
+        {
+            if (ModelState.IsValid)
+            {
+                newContext.Employee.Add(Employee);
+                await newContext.SaveChangesAsync();
+                return RedirectToAction("Dashboard");
+            }
+            //if model state is not valid return error
+            return BadRequest();
         }
     }
 }

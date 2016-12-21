@@ -1,0 +1,136 @@
+@model BenefitsPortal.Models.BenefitsViewModels.AddEmployeeViewModel
+
+<h1>Add New Employee</h1>
+
+<form asp-action="AddEmployee" method="post">
+    <div class="form-horizontal">
+        <hr />
+
+        <div asp-validation-summary="ModelOnly">
+            <div class="form-group">
+                <label asp-for="Employee.FirstName" class="col-md-2 control-label"> First Name </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.FirstName" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.FirstName" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.LastName" class="col-md-2 control-label"> Last Name </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.LastName" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.LastName" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.HireDate" class="col-md-2 control-label"> Hire Date </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.HireDate" class="form-control" type="datetime-local" />
+                    <span asp-validation-for="Employee.HireDate" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.BiWeeklySalary" class="col-md-2 control-label"> BiWeekly Salary </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.BiWeeklySalary" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.BiWeeklySalary" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.AnnualSalary" class="col-md-2 control-label"> Annual Salary </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.AnnualSalary" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.AnnualSalary" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.StreetAddress" class="col-md-2 control-label"> Street Address </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.StreetAddress" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.StreetAddress" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.City" class="col-md-2 control-label"> City </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.City" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.City" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.State" class="col-md-2 control-label"> State </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.State" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.State" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Zip" class="col-md-2 control-label"> Zip </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.Zip" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.Zip" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.EmployeeId" class="col-md-2 control-label"> Employee ID </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.EmployeeId" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.EmployeeId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Department" class="col-md-2 control-label"> Department </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.Department" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.Department" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.HealthInsurancePlanId" class="col-md-2 control-label"> Health Plan # </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.HealthInsurancePlanId" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.HealthInsurancePlanId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.RetirementPlanId" class="col-md-2 control-label"> Retirement Plan # </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.RetirementPlanId" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.RetirementPlanId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.RetirementPlanPercentage" class="col-md-2 control-label"> % to Retirement </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.RetirementPlanPercentage" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.RetirementPlanPercentage" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.LifeInsurancePlanId" class="col-md-2 control-label"> Life Ins Plan # </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.LifeInsurancePlanId" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.LifeInsurancePlanId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.PtoRate" class="col-md-2 control-label"> PTO Accrual Rate </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.PtoRate" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.PtoRate" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.PtoTotal" class="col-md-2 control-label"> PTO Total </label>
+                <div class="col-md-10">
+                    <input asp-for="Employee.PtoTotal" class="form-control" type="text" />
+                    <span asp-validation-for="Employee.PtoTotal" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Add Employee" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
