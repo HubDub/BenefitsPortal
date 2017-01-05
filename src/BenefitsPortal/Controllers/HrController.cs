@@ -62,9 +62,27 @@ namespace BenefitsPortal.Controllers
         //this method will list all of the employees and present the PTO accrual view
         public async Task<IActionResult> Accruals()
         {
-            AccrualViewModel model = new AccrualViewModel(_userManager, newContext);
+            AccrualViewModel model = new AccrualViewModel();
             model.Employees = await newContext.Employee.ToListAsync();
             return View(model);
+        }
+
+        //this method will take the PTO used data, do some logic, and then update the PTO total in the database for each employee
+        [HttpPost]
+        public async Task<IActionResult> AccruePTO([FromBody] List<Employee> EmployeesList)
+        {
+
+            foreach(Employee emp in EmployeesList)
+            {
+                Employee e = newContext.Employee.Where(em => em.EmployeeId == emp.EmployeeId).SingleOrDefault();
+                e.PtoTotal = emp.PtoTotal;
+                e.PtoUsedLast = emp.PtoUsedLast;
+                newContext.Employee.Update(e);
+            }
+            
+            await newContext.SaveChangesAsync();
+            return RedirectToAction("Dashboard", "Hr");
+            
         }
 
         //this method returns the form to add a new employee to the database

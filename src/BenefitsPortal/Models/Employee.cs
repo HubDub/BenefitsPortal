@@ -38,6 +38,7 @@ namespace BenefitsPortal.Models
         public double PtoRate { get; set; }
         [Required]
         public double PtoTotal { get; set; }
+        public double PtoUsedLast { get; set; }
         [Required]
         public int HealthInsurancePlanId { get; set; }
         [Required]
