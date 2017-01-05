@@ -9,8 +9,10 @@ namespace BenefitsPortal.Models.BenefitsViewModels
 {
     public class AccrualViewModel
     {
-        public AccrualViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { }
+        //public AccrualViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { }
+        public AccrualViewModel() { }
         public IEnumerable<Employee> Employees { get; set; }
         public Employee Employee { get; set; }
+        
     }
 }

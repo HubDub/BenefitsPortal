@@ -10,28 +10,33 @@
         <div class="col-md-2">PTO Used This Period</div>
     </div>
 
-    <form asp-controller="Hr" asp-action="Accruals" method="put">
+    <form asp-controller="Hr" asp-action="AccruePTO">
 
         @foreach (var employee in Model.Employees)
         {
             <div class="row">
+                <input type="hidden" asp-for="@employee.EmployeeId" value="@employee.EmployeeId" class="form-control"/>
+
                 <div class="col-md-2">
                     @Html.DisplayFor(modelItem => employee.FirstName) @Html.DisplayFor(modelItem => employee.LastName)
                 </div>
 
-                <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoRate)</div>
+                <div class="col-md-2 PtoRate" id="@employee.PtoRate">@Html.DisplayFor(modelItem => employee.PtoRate)</div>
 
-                <div class="col-md-2">@Html.DisplayFor(modelItem => employee.PtoTotal)</div>
+                <div class="col-md-2 PtoTotal" id="@employee.PtoTotal">@Html.DisplayFor(modelItem => employee.PtoTotal)</div>
 
                 <div class="form-group">
-                    <div class="col-md-2">
-                        <input />
+                    <div class="col-md-2" id="@employee.EmployeeId">
+
+                        <input asp-for="@employee.PtoUsedLast" value="0" class="form-control UsedPto" type="text" />
+                        <span asp-validation-for="@employee.PtoUsedLast" class="text-danger" />
+
                     </div>
                 </div>
             </div>
         }
         <div class="col-md-offset-6 col-md-2">
-            <input  type="submit" value="Accrue PTO" class="btn btn-primary" />
+            <input type="button" value="Accrue PTO" id="accruePto" class="btn btn-primary" />
         </div>
     </form>
 </div>
