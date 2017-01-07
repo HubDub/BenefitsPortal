@@ -19,23 +19,27 @@ namespace BenefitsPortal.Controllers
 
         private ApplicationDbContext newContext;
 
+        //this constructor sets up a new instance of the controller and passes the user manager and DBContext in so these
+        //private variables can be altered.
         public HrController(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1)
         {
             _userManager = userManager;
             newContext = ctx1;
         }
 
-        //this method gets the current user
+        //this method gets the current user and makes it available
         [Authorize]
         private Task<ApplicationUser> GetCurrentUserAsync()
         {
             return _userManager.GetUserAsync(HttpContext.User);
         }
 
-        //this method will get the employees from the DB and pass them to the view model
+        //this method will get the employees from the DB and pass them to the view model. it instantiates a new
+        //view model, then uses Linq to pull the employees from the database along with the appropriate benefit
+        //tables. Then it assigns those to the model and passes that model to the view.
         public async Task<IActionResult> Dashboard()
         {
-            DashboardViewModel model = new DashboardViewModel(_userManager, newContext);
+            DashboardViewModel model = new DashboardViewModel();
 
             var EmployeeBenefits = await
                 (from e in newContext.Employee
@@ -46,10 +50,10 @@ namespace BenefitsPortal.Controllers
             return View(model);
         }
 
-        //this method will get one employee, who is the user, from the DB, to list their details. It will also pull their life insurance, health insurance, retirement vendor, and site-wide benefits from those tables.
+        //this method will get one employee, who is the user, from the DB, to list their details. It will also pull their life insurance, health insurance, retirement vendor, and site-wide benefits from those tables. 
         public async Task<IActionResult> MyBenefits()
         {
-            MyBenefitsViewModel model = new MyBenefitsViewModel(_userManager, newContext);
+            MyBenefitsViewModel model = new MyBenefitsViewModel();
             var user = await GetCurrentUserAsync();
             model.SiteDiscounts = await newContext.SiteDiscount.ToListAsync();
             model.Employee = newContext.Employee.Where(e => e.EmployeeId == user.EmployeeId).SingleOrDefault();
@@ -67,7 +71,7 @@ namespace BenefitsPortal.Controllers
             return View(model);
         }
 
-        //this method will take the PTO used data, do some logic, and then update the PTO total in the database for each employee
+        //this method will receive an array of employee objects from the jquery json post and then update the PTO total in the database for each employee in the list. 
         [HttpPost]
         public async Task<IActionResult> AccruePTO([FromBody] List<Employee> EmployeesList)
         {
@@ -88,7 +92,7 @@ namespace BenefitsPortal.Controllers
         //this method returns the form to add a new employee to the database
         public IActionResult AddEmployee()
         {
-            AddEmployeeViewModel model = new AddEmployeeViewModel(_userManager, newContext);
+            AddEmployeeViewModel model = new AddEmployeeViewModel();
             return View(model);
         }
 

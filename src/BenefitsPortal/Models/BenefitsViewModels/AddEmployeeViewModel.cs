@@ -9,7 +9,7 @@ namespace BenefitsPortal.Models.BenefitsViewModels
 {
     public class AddEmployeeViewModel
     {
-        public AddEmployeeViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { }
+        public AddEmployeeViewModel() { }
         public Employee Employee { get; set; }
     }
 }

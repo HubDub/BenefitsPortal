@@ -1,17 +1,17 @@
 @model BenefitsPortal.Models.BenefitsViewModels.DashboardViewModel
 
-<h1>Dashboard of Employee Benefits</h1>
+<h1 class="yourBenefitsHeader">Dashboard of Employee Benefits</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2">Last Name, First Name</div>
-        <div class="col-md-1">Employee ID</div>
-        <div class="col-md-1">Department</div>
-        <div class="col-md-2">Hire Date</div>
-        <div class="col-md-1">PTO Accrual</div>
-        <div class="col-md-1">PTO Total</div>
-        <div class="col-md-2">Health Plan</div>
-        <div class="col-md-2">% to Retirement</div>
+        <div class="col-md-2 benefitsColumnHeader">Last Name, First Name</div>
+        <div class="col-md-1 benefitsColumnHeader">Employee ID</div>
+        <div class="col-md-1 benefitsColumnHeader">Department</div>
+        <div class="col-md-2 benefitsColumnHeader">Hire Date</div>
+        <div class="col-md-1 benefitsColumnHeader">PTO Accrual</div>
+        <div class="col-md-1 benefitsColumnHeader">PTO Total</div>
+        <div class="col-md-2 benefitsColumnHeader">Health Plan</div>
+        <div class="col-md-2 benefitsColumnHeader">% to Retirement</div>
     </div>
     @foreach (var db in Model.DashboardBenefits)
     {

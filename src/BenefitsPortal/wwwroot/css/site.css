@@ -1,4 +1,22 @@
-﻿body {
+﻿/*navbar background color*/
+.navbar-inverse { 
+    background-color: darkslateblue; 
+}
+
+/*navbar link color*/
+.navbar-inverse .navbar-nav > li > a {
+    color: black;
+}
+
+button.btn.btn-link.navbar-btn.navbar-link {
+    color: black;
+}
+
+a.navbar-brand {
+    color: black;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -35,10 +53,29 @@ textarea {
     padding-left: 0.5em;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
+/* Make .svg files in the carousel display properly in older browsers img[src$=".svg"]*/
+.carousel-inner .color1 {
     width: 100%;
+    background-color: aqua;
+    min-height: 100px;
+}
+
+.carousel-inner .color2 {
+    width: 100%;
+    background-color: blueviolet;
+    min-height: 100px;
+}
+
+.carousel-inner .color3 {
+    width: 100%;
+    background-color: darkred;
+    min-height: 100px;
+}
+
+.carousel-inner .color4 {
+    width: 100%;
+    background-color: chartreuse;
+    min-height: 100px;
 }
 
 /* Hide/rearrange for smaller screens */
@@ -47,4 +84,13 @@ textarea {
   .carousel-caption {
     display: none
   }
+}
+
+.yourBenefitsHeader {
+    text-align: center;
+}
+
+.benefitsColumnHeader {
+    color: darkslateblue;
+    text-decoration: underline; 
 }
