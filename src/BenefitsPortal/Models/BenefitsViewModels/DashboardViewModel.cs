@@ -9,8 +9,7 @@ namespace BenefitsPortal.Models.BenefitsViewModels
 {
     public class DashboardViewModel
     {
-        //public IEnumerable<Employee> Employees { get; set; }
-        public DashboardViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { }
+        public DashboardViewModel() { }
         public IEnumerable<DashboardBenefit> DashboardBenefits { get; set; }
     }
 }

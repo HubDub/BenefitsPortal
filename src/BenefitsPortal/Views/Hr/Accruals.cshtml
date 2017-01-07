@@ -1,13 +1,13 @@
 @model BenefitsPortal.Models.BenefitsViewModels.AccrualViewModel
 
-<h1>Accrual Form</h1>
+<h1 class="yourBenefitsHeader">Accrual Form</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-2">Employee Name</div>
-        <div class="col-md-2">PTO Accrual Rate</div>
-        <div class="col-md-2">PTO Available Total</div>
-        <div class="col-md-2">PTO Used This Period</div>
+        <div class="col-md-2 benefitsColumnHeader">Employee Name</div>
+        <div class="col-md-2 benefitsColumnHeader">PTO Accrual Rate</div>
+        <div class="col-md-2 benefitsColumnHeader">PTO Available Total</div>
+        <div class="col-md-2 benefitsColumnHeader">PTO Used This Period</div>
     </div>
 
     <form asp-controller="Hr" asp-action="AccruePTO">

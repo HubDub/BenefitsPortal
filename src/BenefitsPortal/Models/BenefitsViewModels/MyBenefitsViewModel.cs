@@ -10,7 +10,7 @@ namespace BenefitsPortal.Models.BenefitsViewModels
     public class MyBenefitsViewModel
     {
         public IEnumerable<SiteDiscount> SiteDiscounts { get; set; }
-        public MyBenefitsViewModel(UserManager<ApplicationUser> userManager, ApplicationDbContext ctx1) { }
+        public MyBenefitsViewModel() { }
         public Employee Employee { get; set; }
         public LifeInsurance LifeInsurance { get; set; }
         public Retirement Retirement { get; set; }
