@@ -109,5 +109,16 @@ namespace BenefitsPortal.Controllers
             //if model state is not valid return error
             return BadRequest();
         }
+
+        //this method will show the view of a single employee so the employee can be edited. It passes the employeeId as the argument and uses that to get the employee from the DB. then gives that back to the view. 
+        //public async Task<IActionResult> Edit(int? employeeId)
+        //{
+        //    if (employeeId == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var employee = await newContext.Employee.SingleOrDefaultAsync(e => e.EmployeeId == employeeId);
+        //}
     }
 }
