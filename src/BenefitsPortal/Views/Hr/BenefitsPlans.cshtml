@@ -4,11 +4,19 @@
 
 <div class="container">
     <h3>Life Insurance Plans</h3>
-    @foreach (var plan in Model.LifeInsurances)
+    @foreach (var lplan in Model.LifeInsurances)
     {
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanId)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanName)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanSummary)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanLink)</div>
+        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanId)</div>
+        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanName)</div>
+        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanSummary)</div>
+        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanLink)</div>
+    }
+    <h3>Retirement Plans</h3>
+    @foreach(var rplan in Model.RetirementPlans)
+    {
+        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanId)</div>
+        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanName)</div>
+        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanSummary)</div>
+        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanLink)</div>
     }
 </div>

@@ -126,6 +126,8 @@ namespace BenefitsPortal.Controllers
         {
             ShowBenefitsPlansViewModel model = new ShowBenefitsPlansViewModel();
             model.LifeInsurances = await newContext.LifeInsurance.ToListAsync();
+            model.RetirementPlans = await newContext.Retirement.ToListAsync();
+            model.HealthInsurances = await newContext.HealthInsurance.ToListAsync();
             return View(model);
         }
     }

@@ -9,7 +9,7 @@ namespace BenefitsPortal.Models.BenefitsViewModels
     {
         public ShowBenefitsPlansViewModel() { }
         public IEnumerable<LifeInsurance> LifeInsurances { get; set; }
-        //public IEnumerable<HealthInsurance> HealthInsurances { get; set; }
-        //public IEnumerable<Retirement> RetirementPlans { get; set; }
+        public IEnumerable<HealthInsurance> HealthInsurances { get; set; }
+        public IEnumerable<Retirement> RetirementPlans { get; set; }
     }
 }
