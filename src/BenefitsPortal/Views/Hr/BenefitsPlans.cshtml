@@ -6,17 +6,32 @@
     <h3>Life Insurance Plans</h3>
     @foreach (var lplan in Model.LifeInsurances)
     {
-        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanId)</div>
-        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanName)</div>
-        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanSummary)</div>
-        <div>@Html.DisplayFor(modelItem => lplan.LifeInsPlanLink)</div>
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => lplan.LifeInsPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => lplan.LifeInsPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => lplan.LifeInsPlanSummary)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => lplan.LifeInsPlanLink)</div>
+        </div>
     }
     <h3>Retirement Plans</h3>
     @foreach(var rplan in Model.RetirementPlans)
     {
-        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanId)</div>
-        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanName)</div>
-        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanSummary)</div>
-        <div>@Html.DisplayFor(modelItem => rplan.RetirementPlanLink)</div>
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => rplan.RetirementPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => rplan.RetirementPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => rplan.RetirementPlanSummary)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => rplan.RetirementPlanLink)</div>
+        </div>
+    }
+    <h3>Health Insurance Plans</h3>
+    @foreach(var hplan in Model.HealthInsurances)
+    {
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => hplan.HealthInsPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => hplan.HealthInsPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => hplan.HealthInsPlanSummary)</div>
+            <div>Plan Premium: $@Html.DisplayFor(modelItem => hplan.HealthInsPremium)</div>
+            <div>Plan Deductible: $@Html.DisplayFor(modelItem => hplan.HealthInsDeductible)</div>
+        </div>
     }
 </div>
