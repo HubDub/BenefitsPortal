@@ -1,0 +1,14 @@
+@model BenefitsPortal.Models.BenefitsViewModels.ShowBenefitsPlansViewModel
+
+<h1 class="yourBenefitsHeader">Benefits Plans Offered</h1>
+
+<div class="container">
+    <h3>Life Insurance Plans</h3>
+    @foreach (var plan in Model.LifeInsurances)
+    {
+        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanId)</div>
+        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanName)</div>
+        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanSummary)</div>
+        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanLink)</div>
+    }
+</div>

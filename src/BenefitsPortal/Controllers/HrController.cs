@@ -120,5 +120,13 @@ namespace BenefitsPortal.Controllers
 
         //    var employee = await newContext.Employee.SingleOrDefaultAsync(e => e.EmployeeId == employeeId);
         //}
+
+        //this method will show the view of the existing benefits plans
+        public async Task<IActionResult> BenefitsPlans()
+        {
+            ShowBenefitsPlansViewModel model = new ShowBenefitsPlansViewModel();
+            model.LifeInsurances = await newContext.LifeInsurance.ToListAsync();
+            return View(model);
+        }
     }
 }
