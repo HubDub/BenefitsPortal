@@ -4,11 +4,41 @@
 
 <div class="container">
     <h3>Life Insurance Plans</h3>
-    @foreach (var plan in Model.LifeInsurances)
+    @foreach (var lplan in Model.LifeInsurances)
     {
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanId)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanName)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanSummary)</div>
-        <div>@Html.DisplayFor(modelItem => plan.LifeInsPlanLink)</div>
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => lplan.LifeInsPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => lplan.LifeInsPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => lplan.LifeInsPlanSummary)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => lplan.LifeInsPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="OneLifePlan" asp-route="lplan.LifeInsPlanId" class="button button-primary" value="Edit Plan"/>
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan"/>
+        </div>
+    }
+    <h3>Retirement Plans</h3>
+    @foreach(var rplan in Model.RetirementPlans)
+    {
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => rplan.RetirementPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => rplan.RetirementPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => rplan.RetirementPlanSummary)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => rplan.RetirementPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="EditRetirementPlan" class="button button-primary" value="Edit Plan" />
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan" />
+        </div>
+    }
+    <h3>Health Insurance Plans</h3>
+    @foreach(var hplan in Model.HealthInsurances)
+    {
+        <div class="jumbotron">
+            <div>Plan ID: @Html.DisplayFor(modelItem => hplan.HealthInsPlanId)</div>
+            <div>Plan Name: @Html.DisplayFor(modelItem => hplan.HealthInsPlanName)</div>
+            <div>Plan Summary: @Html.DisplayFor(modelItem => hplan.HealthInsPlanSummary)</div>
+            <div>Plan Premium: $@Html.DisplayFor(modelItem => hplan.HealthInsPremium)</div>
+            <div>Plan Deductible: $@Html.DisplayFor(modelItem => hplan.HealthInsDeductible)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => hplan.HealthInsPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="EditHealthPlan" class="button button-primary" value="Edit Plan" />
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan" />
+        </div>
     }
 </div>
