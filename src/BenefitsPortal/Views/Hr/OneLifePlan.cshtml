@@ -1,0 +1,41 @@
+@model BenefitsPortal.Models.BenefitsViewModels.OneLifePlanViewModel
+
+<h1>Edit Life Plan</h1>
+
+<form asp-controller="Hr" asp-action="EditLifePlan" method="put">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly">
+            <div class="form-group">
+                <label asp-for="LifeInsurance.LifeInsPlanId" class="col-md-2 control-label"> Life Insurance ID </label>
+                <div class="col-md-10">
+                    <input asp-for="LifeInsurance.LifeInsPlanId" class="form-control" />
+                    <span asp-validation-for="LifeInsurance.LifeInsPlanId" class="text-danger" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LifeInsurance.LifeInsPlanName" class="col-md-2 control-label"> Life Insurance Plan Name </label>
+                <div class="col-md-10">
+                    <input asp-for="LifeInsurance.LifeInsPlanName" class="form-control" />
+                    <span asp-validation-for="LifeInsurance.LifeInsPlanName" class="text-danger" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LifeInsurance.LifeInsPlanSummary" class="col-md-2 control-label"> Life Insurance Summary </label>
+                <div class="col-md-10">
+                    <input asp-for="LifeInsurance.LifeInsPlanSummary" class="form-control" />
+                    <span asp-validation-for="LifeInsurance.LifeInsPlanSummary" class="text-danger" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LifeInsurance.LifeInsPlanLink" class="col-md-2 control-label"> Life Insurance Link </label>
+                <div class="col-md-10">
+                    <input asp-for="LifeInsurance.LifeInsPlanLink" class="form-control" />
+                    <span asp-validation-for="LifeInsurance.LifeInsPlanLink" class="text-danger" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

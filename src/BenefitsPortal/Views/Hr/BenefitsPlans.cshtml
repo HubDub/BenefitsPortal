@@ -11,6 +11,8 @@
             <div>Plan Name: @Html.DisplayFor(modelItem => lplan.LifeInsPlanName)</div>
             <div>Plan Summary: @Html.DisplayFor(modelItem => lplan.LifeInsPlanSummary)</div>
             <div>Plan Link: @Html.DisplayFor(modelItem => lplan.LifeInsPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="OneLifePlan" asp-route="lplan.LifeInsPlanId" class="button button-primary" value="Edit Plan"/>
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan"/>
         </div>
     }
     <h3>Retirement Plans</h3>
@@ -21,6 +23,8 @@
             <div>Plan Name: @Html.DisplayFor(modelItem => rplan.RetirementPlanName)</div>
             <div>Plan Summary: @Html.DisplayFor(modelItem => rplan.RetirementPlanSummary)</div>
             <div>Plan Link: @Html.DisplayFor(modelItem => rplan.RetirementPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="EditRetirementPlan" class="button button-primary" value="Edit Plan" />
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan" />
         </div>
     }
     <h3>Health Insurance Plans</h3>
@@ -32,6 +36,9 @@
             <div>Plan Summary: @Html.DisplayFor(modelItem => hplan.HealthInsPlanSummary)</div>
             <div>Plan Premium: $@Html.DisplayFor(modelItem => hplan.HealthInsPremium)</div>
             <div>Plan Deductible: $@Html.DisplayFor(modelItem => hplan.HealthInsDeductible)</div>
+            <div>Plan Link: @Html.DisplayFor(modelItem => hplan.HealthInsPlanLink)</div>
+            <input type="button" asp-controller="Hr" asp-action="EditHealthPlan" class="button button-primary" value="Edit Plan" />
+            <input type="button" asp-controller="Hr" asp-action="Delete" class="button button-danger" value="Delete Plan" />
         </div>
     }
 </div>
